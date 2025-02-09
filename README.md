@@ -75,10 +75,10 @@ DHS.abbrev <- 'MWI'
 survey_year <- 2015
 frame_year <- 2008
 calibrated_year <- 2008
-strat_level_GADM <- 1
+strat_level_GADM <- 1 # NO NEED TO CHANGE
 svy_training_year <- c(2010,2015)
 ```
-Here `frame_year` is the census year which the DHS survey this based on,  `calibrated_year` is the year which DHS survey's u/r population fraction is based on (See section 6 for more details). `svy_training_year` is referring to the DHS surveys who were conducted based on the same census survey. 
+Here `frame_year` is the census year which the DHS survey this based on,  `calibrated_year` is the year which DHS survey's u/r population fraction is based on (See section 6 for more details). `strat_level_GADM` is the admin level which the sampling fram is based on, typical equal to `1`. `svy_training_year` is referring to the DHS surveys who were conducted based on the same census survey. 
 For example, Malawi 2015 survey and 2010 survey are all based on Malawi 2008 census survey, so We combine them together to increase the training sample size for classification modeling.
 
 ---
