@@ -22,7 +22,7 @@ Urban-Rural-Pipeline/
 │   │   ├── prepare_subpop.R
 ```
 
-## Package
+## Packages
 We use R to conduct all the statistical analysis. Packages and dependencies could be installed as following through the pipeline. Most packages are found under CRAN. For **surveyPrev**, we recommend you download from [surveyPrev GitHub repository](https://github.com/richardli/surveyPrev).
 
 
