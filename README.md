@@ -12,7 +12,7 @@ We also recommend you to try on our Shiny App: [SAE4Health](https://sae4health.s
 ## UR-Pipeline-Demo Structure
 
 ```
-Urban-Rural-Pipeline/
+UR-Pipeline-Demo/
 ├── create_folder.R
 ├── Data/
 │   ├── DHS_meta.rda
