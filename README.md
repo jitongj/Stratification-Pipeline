@@ -6,7 +6,7 @@ This repository contains scripts for conducting urban-rural stratification using
 
 The detailed methodology of the stratification modelcan be found in the referenced paper here: [Yunhan Wu and Jon Wakefield](https://academic.oup.com/jrsssa/article/187/3/811/7578683).
 
-## Repository Structure
+## UR-Pipeline-Demo Structure
 
 ```
 Urban-Rural-Pipeline/
@@ -16,7 +16,6 @@ Urban-Rural-Pipeline/
 │   ├── Global_rater/
 │   │   ├── night_time_light/ (TIF files)
 │   │   ├── subpop/
-├── Results/
 ├── Scripts/
 │   ├── Sub_population/
 │   │   ├── prepare_subpop.R
