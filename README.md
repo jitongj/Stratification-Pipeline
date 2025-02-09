@@ -243,7 +243,7 @@ admin.level.tmp <- 2
 sub_pop <- "f15_49"
 indicator <- "HA_HIVP_B_HIV"
 ```
-Adjust `admin.level.tmp` for different administrative levels which you want to model at, for example, `1`.
+Adjust `admin.level.tmp` for different administrative levels which you want to model at, such as, `1`. But please ensure it does not exceed the country's maximum admin level.
 
 This will generate a plot comparing the stratified against unstratified models with mean and standard deviation.
 
