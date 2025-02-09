@@ -61,8 +61,7 @@ Check the `Data/Global_rater/subpop/` folder for the generated population TIF fi
 Copy all scripts from `code` folder into the respective country-survey folder under `Scripts`, e.g.`Scripts/Malawi_2015/`
 
 ---
-
-### We have prepared all structure so from the following we are going to start the steps for stratification
+### With the structure in place, we will now proceed with the stratification steps.
 ---
 
 ### **4. Run Initial Data Preparation**
@@ -95,7 +94,8 @@ This step generates required datasets and polygon information.
 ---
 
 ### **6. Create Reference DataFrames**
-Generate the following `.rds` files and named it start with `country.abbrev`, for example:
+Generate the following `.rds` files, naming them with the `country.abbrev` prefix. For example:
+
 - `mwi_ref_tab.rds` (contains urban fractions)
 - `mwi_frame_ea.rds` (EA clusters in census)
 - `mwi_sample_ea.rds` (EA clusters in DHS survey)
@@ -109,7 +109,7 @@ For `mwi_ref_tab.rds`, create a data frame in the following format:
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
 
 
-- `urb_frac` must be calculated based on the DHS survey’s urban-rural population table, typically found in Appendix A of survey reports, for example.
+- `urb_frac` should be derived from the urban-rural population table in the DHS survey, typically located in Appendix A of the survey reports. For greater accuracy, use the actual population numbers instead of the urban percentage provided in the table. For example.
   ![image](https://github.com/user-attachments/assets/154dc67d-3a95-49b7-adb0-5a2e47ea65c1)
 
 - If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
@@ -249,8 +249,3 @@ Adjust `admin.level.tmp` for different administrative levels which you want to m
 
 This will generate a plot comparing the stratified against unstratified models with mean and standard deviation.
 
----
-
-## Acknowledgments
-- DHS Program for survey data.
-- Contributors to the R packages used in this pipeline.
