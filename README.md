@@ -2,9 +2,9 @@
 
 In this document, we give an overview of the urban-rural stratification pipeline and suggest the order at which scripts are run. Note that our pipeline is not aimed to replicate the estimates presented in DHS final report. Due to distinctions in methods, our estimates will not be exactly the same as DHS estimates, but they will be consistent.
 
-This repository contains scripts for conducting urban-rural stratification using DHS survey data. The pipeline is designed to process subpopulation data, generate urban-rural fractions, and evaluate stratification needs. Please download the the pipline folder from [UR-Pipeline-Demo](https://uwnetid-my.sharepoint.com/:f:/g/personal/jitongj_uw_edu/EplTkYWv0eFCjjwmH7PW-qwBiWzINyB8VIr6VYBMcHPdQQ?e=7wLIAi) and the code folder in this repository.
+This repository contains scripts for conducting urban-rural stratification using DHS survey data. The pipeline is designed to process subpopulation data, generate urban-rural fractions, and evaluate stratification needs. Please download the the pipline folder from [UR-Pipeline-Demo](https://uwnetid-my.sharepoint.com/:f:/g/personal/jitongj_uw_edu/EplTkYWv0eFCjjwmH7PW-qwBiWzINyB8VIr6VYBMcHPdQQ?e=7wLIAi) and the **code** folder in this repository.
 
-The detailed methodology of the stratification modelcan be found in the referenced paper here: [Yunhan Wu and Jon Wakefield](https://academic.oup.com/jrsssa/article/187/3/811/7578683).
+The detailed methodology of the stratification modelcan be found in the referenced document here: [Yunhan Wu and Jon Wakefield](https://academic.oup.com/jrsssa/article/187/3/811/7578683), and the **Stratification_Pipeline.pdf** in this repository.
 
 ## UR-Pipeline-Demo Structure
 
