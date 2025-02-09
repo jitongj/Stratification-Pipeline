@@ -95,7 +95,7 @@ This step generates required datasets and polygon information.
 ---
 
 ### **6. Create Reference DataFrames**
-Generate the following `.rds` files, naming them with the `country.abbrev` prefix. For example:
+You need to write the codes to generate the following `.rds` files, naming them with the `country.abbrev` prefix. For example:
 
 - `mwi_ref_tab.rds` (contains urban fractions)
 - `mwi_frame_ea.rds` (EA clusters in census)
@@ -110,20 +110,22 @@ For `mwi_ref_tab.rds`, create a data frame in the following format:
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
 
 
-- `urb_frac` should be derived from the urban-rural population table in the DHS survey, typically located in Appendix A of the survey reports. For greater accuracy, use the actual population numbers instead of the urban percentage provided in the table. For example.
+- `urb_frac` should be derived from the urban-rural population table in the DHS survey, typically located in Appendix A of the survey reports. For greater accuracy, use the actual population numbers to calculate the fraction instead of the urban percentage provided in the table. For example.
   ![image](https://github.com/user-attachments/assets/154dc67d-3a95-49b7-adb0-5a2e47ea65c1)
 
 - If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
 
-- Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.
+- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.**
 - The year on which this fraction is based will serve as our calibration year, as it will be used to adjust the fractions calculated in subsequent steps.
 
-For `mwi_frame_ea.rds` and `mwi_sample_ea.rds`, create the data frame in the following format:
+
+
+For `mwi_frame_ea.rds` and `mwi_sample_ea.rds`, write codes to create the data frame in the following format:
 
 ![image](https://github.com/user-attachments/assets/9e934b66-5ad6-454b-804b-6a636f7e4423)
 
 
-- Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`. ((eg. Nigeria 2018 survey report Table A.2 and Table A.3 in Appendix A)
+- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.** (eg. Nigeria 2018 survey report Table A.2 and Table A.3 in Appendix A)
   
 
 Ensure they are stored under the country_survey folder under `Data`, for example:
