@@ -72,16 +72,13 @@ strat_level_GADM <- 1
 svy_training_year <- c(2010,2015)
 ```
 Here `frame_year` is the census year which the DHS survey this based on,  `calibrated_year` is the. `svy_training_year` is referring to the DHS surveys who were conducted based on the same census survey. 
-For example, Malawi 2015 survey and 2010 survey are all based on Malawi 2008 census survey. We combine them together to increase the training sample size for classification modeling.
+For example, Malawi 2015 survey and 2010 survey are all based on Malawi 2008 census survey, so We combine them together to increase the training sample size for classification modeling.
 
 ---
 
 ### **5. Generate Spatial Data**
-Run:
-```r
-source("Scripts/step1_prepare_dat.R")
-```
-Modify:
+Modify the following variables in `step1_prepare_dat.R` according to your chosen survey and then run the script:
+
 ```r
 country <- 'Malawi'
 survey_year <- '2015'
@@ -91,37 +88,51 @@ This step generates required datasets and polygon information.
 ---
 
 ### **6. Create Reference DataFrames**
-Generate the following `.rds` files:
+Generate the following `.rds` files and named it start with `country.abbrev`, for example:
 - `mwi_ref_tab.rds` (contains urban fractions)
 - `mwi_frame_ea.rds` (EA clusters from census)
 - `mwi_sample_ea.rds` (EA clusters from DHS survey)
 
-Ensure they are stored under:
+(change `mwi` for your country's abbrev)
+
+Each of these files should be structured as follows:
+
+`mwi_ref_tab.rds`:
+
+![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
+
+
+- `urb_frac` must be calculated based on the DHS survey’s urban-rural population table, typically found in Appendix A of survey reports, for example.
+  ![image](https://github.com/user-attachments/assets/154dc67d-3a95-49b7-adb0-5a2e47ea65c1)
+
+- If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
+
+- Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.
+
+
+Ensure they are stored under the country_survey folder under `Data`, for example:
 ```
 Data/Malawi_2015/
 ```
 
+
+
 ---
 
 ### **7. Generate Urban-Rural Surface**
-Run:
-```r
-source("Scripts/step2_UR_surface.R")
-```
-Modify:
+Modify the following variables in `step2_UR_surface.R` according to your chosen survey and then run the script:
+
 ```r
 country <- 'Malawi'
 survey_year <- '2015'
 ```
+This will generate the country's urban/rural indicator tif map file and urban/rural probability tif map file.
 
 ---
 
 ### **8. Compute Urban-Rural Fractions**
-Run:
-```r
-source("Scripts/step3_get_fraction.R")
-```
-Modify:
+Modify the following variables in `step3_get_fraction.R` according to your chosen survey and then run the script:
+
 ```r
 country <- 'Malawi'
 survey_year <- '2015'
