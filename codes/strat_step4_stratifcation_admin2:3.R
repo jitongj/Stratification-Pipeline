@@ -113,12 +113,11 @@ if(admin.level.tmp==1) {
     by.adm=paste0("NAME_",admin.level.tmp),
     by.adm.upper = paste0("NAME_",1)) # or admin.level.tmp-1
   
-  ##### CHECK HERE!
   tmp.cluster.info <- surveyPrev::clusterInfo(geo=tmp.geo, 
                                               poly.adm1=country_shp_analysis[[paste0('Admin-',admin.level.tmp-1)]],
                                               poly.adm2=country_shp_analysis[[paste0('Admin-',admin.level.tmp)]], 
-                                              by.adm1 = paste0("NAME_1"), ##### CHECK HERE!!!!!
-                                              by.adm2 = paste0("NAME_2")) ##### CHECK HERE!!!!!
+                                              by.adm1 = paste0("NAME_1"),
+                                              by.adm2 = paste0("NAME_2")) 
   matched.order <- match(adm_info_tmp[["data"]]$admin2.name.full,
                          adm_urb_frac$adm.name.full)
   
