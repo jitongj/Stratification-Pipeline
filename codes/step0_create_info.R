@@ -18,7 +18,7 @@ DHS.abbrev <- 'MWI'
 
 survey_year <- 2015 ### if spans two years, use the first one
 frame_year <- 2008 ### year of the sampling frame creation
-calibrated_year <- 2015
+calibrated_year <- 2008
 
 ### Which GADM level corresponds to the stratification level used in this survey? 
 ### i.e. Which GADM level corresponds to DHS defined Admin-1?
