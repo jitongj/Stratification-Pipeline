@@ -90,14 +90,14 @@ This step generates required datasets and polygon information.
 ### **6. Create Reference DataFrames**
 Generate the following `.rds` files and named it start with `country.abbrev`, for example:
 - `mwi_ref_tab.rds` (contains urban fractions)
-- `mwi_frame_ea.rds` (EA clusters from census)
-- `mwi_sample_ea.rds` (EA clusters from DHS survey)
+- `mwi_frame_ea.rds` (EA clusters in census)
+- `mwi_sample_ea.rds` (EA clusters in DHS survey)
 
 (change `mwi` for your country's abbrev)
 
 Each of these files should be structured as follows:
 
-`mwi_ref_tab.rds`:
+For `mwi_ref_tab.rds`, create a data frame in the following format:
 
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
 
@@ -109,13 +109,18 @@ Each of these files should be structured as follows:
 
 - Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.
 
+For `mwi_frame_ea.rds` and `mwi_sample_ea.rds`, create the data frame in the following format:
+
+![image](https://github.com/user-attachments/assets/9e934b66-5ad6-454b-804b-6a636f7e4423)
+
+
+- Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`. ((eg. Nigeria 2018 survey report Table A.2 and Table A.3 in Appendix A)
+  
 
 Ensure they are stored under the country_survey folder under `Data`, for example:
 ```
 Data/Malawi_2015/
 ```
-
-
 
 ---
 
@@ -130,52 +135,66 @@ This will generate the country's urban/rural indicator tif map file and urban/ru
 
 ---
 
-### **8. Compute Urban-Rural Fractions**
+### **8. Compute Urban-Rural Fractions for different admin level and subpopluation**
 Modify the following variables in `step3_get_fraction.R` according to your chosen survey and then run the script:
 
 ```r
 country <- 'Malawi'
 survey_year <- '2015'
 ```
-The results will be saved under:
-```
-Results/Malawi_2015/
-```
+The results will be saved under `Results/Malawi_2015/UR_fraction` with separate folders for different admin level:
+<img width="324" alt="image" src="https://github.com/user-attachments/assets/9eacabb1-63a6-4fd4-973e-a43936a1e5aa" />
+
+
+Each folder will contain 5 kinds of population:
+
+- k0_1: childern aged 0-1
+- k0_5: childern aged 0-5
+- f15_49: women aged 15-49 
+- m15_49: men aged 15-49
+- total_pop: total population 
+
+
 
 ---
 
+### Now we start to determine if we need to do the stratification and how to do it
+
+The basic idea is that if the survey has oversampling issue and the indicator has urban-rural association, then it will introduce bias when we apply the cluster-level model.
+Therefore we need the stratification model to address the bias.
+
+---
 ### **9. Test for Oversampling Bias**
-Run:
-```r
-source("Scripts/strat_step1_survey_test.R")
-```
-Modify:
+
+Firt we use chi-square test with Monte Carlo method to test if there is oversampling issue in the survey.
+
+Modify the following variables in `strat_step1_survey_test.R` according to your chosen survey and then run the script:
 ```r
 country <- 'Malawi'
 country.abbrev <- 'mwi'
 survey_year <- '2015'
 ```
-Check the output in:
-```
-Results/Malawi_2015/UR_stratification/
-```
+Check the output in `Results/Malawi_2015/UR_stratification/`
+
 This will produce a histogram and statistical tests for oversampling bias.
 
 ---
 
-### **10. Indicator Association Testing**
-Run:
-```r
-source("Scripts/strat_step2_indicator_test.R")
-```
-Modify:
+### **10. Indicator's Urban-Rural Association Testing**
+
+Next, we conduct the Likelihood Ratio test to see if the indicator we are interested has u/r association.
+
+Modify the following variables in `strat_step2_indicator_test.R` according to your chosen survey and then run the script:
+
 ```r
 country <- 'Malawi'
 country.abbrev <- 'mwi'
 survey_year <- '2015'
-indicator <- "CH_DIAT_C_ORT"
+indicator <- "HA_HIVP_B_HIV"
 ```
-The output will indicate whether stratification is recommended.
+Check the output in `Results/Malawi_2015/UR_stratification/Indicators/HA_HIVP_B_HIV/`
+
+Meanwhile, the console output will show you whether the indicator has urban/rural association.
 
 ---
 
