@@ -203,7 +203,6 @@ Meanwhile, the console output will show you whether the indicator has urban/rura
 
 Modify the following variables in `strat_step3_check_procedure.R` according to your chosen survey and then run the script:
 
-Modify:
 ```r
 country <- 'Malawi'
 country.abbrev <- 'mwi'
@@ -222,16 +221,14 @@ Valid `sub_pop` values:
 - "m15_49"
 - "f15_19"
 
-This 
+
+This will generate a plot comparing the stratified and unstratified models against direct estimates at the admin1 level. Additionally, it will calculate the weighted absolute bias to quantify the differences between the (un)stratified models and the direct estimate.
 
 ---
 
 ### **12. Stratification at Admin Levels**
-Run:
-```r
-source("Scripts/strat_step4_stratifcation_admin2:3.R")
-```
-Modify:
+Modify the following variables in `strat_step4_stratifcation_admin2:3.R` according to your chosen survey and then run the script:
+
 ```r
 country <- 'Malawi'
 country.abbrev <- 'mwi'
@@ -241,32 +238,9 @@ admin.level.tmp <- 2
 sub_pop <- "f15_49"
 indicator <- "HA_HIVP_B_HIV"
 ```
-Adjust `admin.level.tmp` for different administrative levels.
+Adjust `admin.level.tmp` for different administrative levels which you want to model at, for example, `1`.
 
----
-
-## Results & Interpretation
-- The pipeline produces urban-rural fraction estimates for subpopulations.
-- Statistical tests check for oversampling bias.
-- Stratification recommendations depend on bias detection and indicator association.
-- Final stratification procedures refine estimates at various admin levels.
-
-For further details, check the results stored under:
-```
-Results/Malawi_2015/
-```
-
----
-
-## Contributors
-- **Project Lead:** [Your Name]
-- **Institution:** [Your Organization]
-- **Contact:** [Your Email]
-
----
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This will generate a plot comparing the stratified against unstratified models with mean and standard deviation.
 
 ---
 
