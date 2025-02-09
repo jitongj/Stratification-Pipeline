@@ -4,7 +4,7 @@ In this document, we give an overview of the urban-rural stratification pipeline
 
 This repository contains scripts for conducting urban-rural stratification using DHS survey data. The pipeline is designed to process subpopulation data, generate urban-rural fractions, and evaluate stratification needs. Please download the the pipline folder from this link and the code folder in this repository.
 
-The detailed methodology of the stratification modelcan be found in the referenced paper here: [Yunhan Wu and Jon Wakefield]([https://github.com/richardli/surveyPrev](https://academic.oup.com/jrsssa/article/187/3/811/7578683).
+The detailed methodology of the stratification modelcan be found in the referenced paper here: [Yunhan Wu and Jon Wakefield](https://academic.oup.com/jrsssa/article/187/3/811/7578683).
 
 ## Repository Structure
 
