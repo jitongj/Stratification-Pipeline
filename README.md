@@ -15,7 +15,6 @@ Urban-Rural-Pipeline/
 │   ├── DHS_meta.rda
 │   ├── Global_rater/
 │   │   ├── night_time_light/ (TIF files)
-│   │   ├── subpop/
 ├── Scripts/
 │   ├── Sub_population/
 │   │   ├── prepare_subpop.R
