@@ -71,7 +71,7 @@ calibrated_year <- 2008
 strat_level_GADM <- 1
 svy_training_year <- c(2010,2015)
 ```
-Here `frame_year` is the census year which the DHS survey this based on,  `calibrated_year` is the. `svy_training_year` is referring to the DHS surveys who were conducted based on the same census survey. 
+Here `frame_year` is the census year which the DHS survey this based on,  `calibrated_year` is the year which DHS survey's u/r population fraction is based on (See section 6 for more details). `svy_training_year` is referring to the DHS surveys who were conducted based on the same census survey. 
 For example, Malawi 2015 survey and 2010 survey are all based on Malawi 2008 census survey, so We combine them together to increase the training sample size for classification modeling.
 
 ---
@@ -108,6 +108,7 @@ For `mwi_ref_tab.rds`, create a data frame in the following format:
 - If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
 
 - Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.
+- The year on which this fraction is based will serve as our calibration year, as it will be used to adjust the fractions calculated in subsequent steps.
 
 For `mwi_frame_ea.rds` and `mwi_sample_ea.rds`, create the data frame in the following format:
 
@@ -199,25 +200,29 @@ Meanwhile, the console output will show you whether the indicator has urban/rura
 ---
 
 ### **11. Validate Stratification Procedure**
-Run:
-```r
-source("Scripts/strat_step3_check_procedure.R")
-```
+
+Modify the following variables in `strat_step3_check_procedure.R` according to your chosen survey and then run the script:
+
 Modify:
 ```r
 country <- 'Malawi'
 country.abbrev <- 'mwi'
 gadm.abbrev <- 'mwi'
 survey_year <- '2015'
-indicator <- "CH_DIAT_C_ORT"
-sub_pop <- "k0_5"
+indicator <- "HA_HIVP_B_HIV"
+sub_pop <- "f15_49"
 ```
+
+Make sure `sub_pop` is consistent with the definition of your indicator. For example, the `HA_HIVP_B_HIV` is referring to the female aged 15-49 according to the DHS report.
+
 Valid `sub_pop` values:
 - "k0_5"
 - "total_pop"
 - "k0_1"
 - "m15_49"
 - "f15_19"
+
+This 
 
 ---
 
