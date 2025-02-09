@@ -1,7 +1,10 @@
 # Urban-Rural Stratification Pipeline
 
-This repository contains scripts for conducting urban-rural stratification using DHS survey data. The pipeline is designed to process subpopulation data, generate urban-rural fractions, and evaluate stratification needs.
-Please download the the pipline folder from this link and the code folder in this repository.
+In this document, we give an overview of the urban-rural stratification pipeline and suggest the order at which scripts are run. Note that our pipeline is not aimed to replicate the estimates presented in DHS final report. Due to distinctions in methods, our estimates will not be exactly the same as DHS estimates, but they will be consistent.
+
+This repository contains scripts for conducting urban-rural stratification using DHS survey data. The pipeline is designed to process subpopulation data, generate urban-rural fractions, and evaluate stratification needs. Please download the the pipline folder from this link and the code folder in this repository.
+
+The detailed methodology of the stratification modelcan be found in the referenced paper here: [Yunhan Wu and Jon Wakefield]([https://github.com/richardli/surveyPrev](https://academic.oup.com/jrsssa/article/187/3/811/7578683).
 
 ## Repository Structure
 
@@ -18,6 +21,10 @@ Urban-Rural-Pipeline/
 │   ├── Sub_population/
 │   │   ├── prepare_subpop.R
 ```
+
+## Package
+We use R to conduct all the statistical analysis. Packages and dependencies could be installed as following through the pipeline. Most packages are found under CRAN. For **surveyPrev**, we recommend you download from [surveyPrev GitHub repository](https://github.com/richardli/surveyPrev).
+
 
 ## How to Run the Pipeline
 
