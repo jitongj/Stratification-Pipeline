@@ -30,7 +30,7 @@ We use R to conduct all the statistical analysis. Packages and dependencies coul
 
 ### **1. Setup the Folder Structure**
 
-This script aim to generate the relevant folder structure.
+This script aims to generate the relevant folder structure.
 
 Modify the following variables in `create_folder.R` according to your chosen survey and then run the script:
 ```r
