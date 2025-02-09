@@ -99,7 +99,7 @@ You need to write the codes to generate the following `.rds` files, naming them 
 
 - `mwi_ref_tab.rds` (contains urban fractions)
 - `mwi_frame_ea.rds` (EA clusters in census)
-- `mwi_sample_ea.rds` (EA clusters in DHS survey)
+- `mwi_sample_ea.rds` (EA clusters in DHS sampling survey)
 
 (change `mwi` for your country's abbrev)
 
@@ -115,7 +115,7 @@ For `mwi_ref_tab.rds`, create a data frame in the following format:
 
 - If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
 
-- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.**
+- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.** (Take the spelling and order in `country_shp_analysis.rds` as the standard)
 - The year on which this fraction is based will serve as our calibration year, as it will be used to adjust the fractions calculated in subsequent steps.
 
 
@@ -125,7 +125,8 @@ For `mwi_frame_ea.rds` and `mwi_sample_ea.rds`, write codes to create the data f
 ![image](https://github.com/user-attachments/assets/9e934b66-5ad6-454b-804b-6a636f7e4423)
 
 
-- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.** (eg. Nigeria 2018 survey report Table A.2 and Table A.3 in Appendix A)
+- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.** (Take the spelling and order in `country_shp_analysis.rds` as the standard)
+- You can find the number of EA cluster for census or DHS sampling survey in the Appendix A (eg. Nigeria 2018 survey report Table A.2 and Table A.3 in Appendix A)
   
 
 Ensure they are stored under the country_survey folder under `Data`, for example:
