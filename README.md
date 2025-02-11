@@ -110,7 +110,7 @@ For `mwi_ref_tab.rds`, create a data frame in the following format:
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
 
 
-- `urb_frac` should be derived from the urban-rural population table in the DHS survey, typically located in Appendix A of the survey reports. For greater accuracy, use the actual population numbers to calculate the fraction instead of the urban percentage provided in the table. For example.
+- `urb_frac` should be derived from the urban-rural population table in the DHS survey, typically located in Appendix A of the survey reports. For greater accuracy, use the actual population numbers to calculate the fraction instead of the urban percentage provided in the table. **We highly recommend using your favorite LLM model to work this out.** For example, take a screenshot of the following figure and use the prompt 'Based on this table, can you extract all the regions inside, with their corresponding population of urban,rural, total? Give me the r code for creating the data frame using data.frame function.'
   ![image](https://github.com/user-attachments/assets/154dc67d-3a95-49b7-adb0-5a2e47ea65c1)
 
 - If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
