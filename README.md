@@ -118,11 +118,10 @@ Next, generate the following three data frames and save them as `.rds` files, us
 
 Each of these files should be structured as follows:
 
-For the format of `mwi_ref_tab`:
+`mwi_ref_tab` has four colums:
 
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
 
-`mwi_ref_tab` has four colums:
 
 - `strata.adm.name`: Obtained from `country_shp_analysis[["Admin-1"]]$NAME_1`. In other words, the areas's name and area's order in `mwi_ref_tab$strata.adm.name` should **exactly match** with `country_shp_analysis[["Admin-1"]]$NAME_1`.
 - `strata.adm.num`: the corresponding order after you obtain `mwi_ref_tab$strata.adm.name`.
