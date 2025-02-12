@@ -95,41 +95,57 @@ This step generates required datasets and polygon information.
 ---
 
 ### **6. Create Reference DataFrames**
-You need to write the codes to generate the following `.rds` files, naming them with the `country.abbrev` prefix. For example:
+Now in this step you need to **open a new empty script with cleaned environment** and load the data `country_shp_analysis.rds` under `Data/Malawi_2015/shapeFiles_gadm/`.
 
-- `mwi_ref_tab.rds` (contains urban fractions)
-- `mwi_frame_ea.rds` (EA clusters in census)
-- `mwi_sample_ea.rds` (EA clusters in DHS sampling survey)
+The `country_shp_analysis.rds` file contains a list of administrative levels, each of which includes detailed information on the areas within that level. For Malawi, since it has 2 admin levels beyond National level, you will see the following:
+
+
+<img width="654" alt="Screenshot 2025-02-12 at 10 44 11" src="https://github.com/user-attachments/assets/d63533ae-4cce-4195-8afc-9f63a719326a" />
+
+Generally we look at the **Admin-1**, so by `View(country_shp_analysis[["Admin-1"]])`, you will see:
+
+<img width="905" alt="Screenshot 2025-02-12 at 10 49 20" src="https://github.com/user-attachments/assets/ae2a8fae-96cd-452f-a61d-577d9ea31af4" />
+
+In `country_shp_analysis[["Admin-1"]]`, focus on the `NAME_1` column, which lists the names of all areas in Admin-1. Pay close attention to the spelling and order of these names, as you will later use them as a baseline to verify your own created data.
+
+Next, generate the following three data frames and save them as `.rds` files, using `country.abbrev` as the prefix. For example:
+
+- `mwi_ref_tab` -> `mwi_ref_tab.rds` (contains urban fractions)
+- `mwi_frame_ea` -> `mwi_frame_ea.rds` (EA clusters in census)
+- `mwi_sample_ea` -> `mwi_sample_ea.rds` (EA clusters in DHS sampling survey)
 
 (change `mwi` for your country's abbrev)
 
 Each of these files should be structured as follows:
 
-For `mwi_ref_tab.rds`, create a data frame in the following format:
+For the format of `mwi_ref_tab`:
 
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
 
+`mwi_ref_tab` has four colums:
 
-- `urb_frac` should be derived from the urban-rural population table in the DHS survey, typically located in Appendix A of the survey reports. For greater accuracy, use the actual population numbers to calculate the fraction instead of the urban percentage provided in the table. **We highly recommend using your favorite LLM model to work this out.** For example, take a screenshot of the following figure and use the prompt 'Based on this table, can you extract all the regions inside, with their corresponding population of urban,rural, total? Give me the r code for creating the data frame using data.frame function.'
+- `strata.adm.name`: Obtained from `country_shp_analysis[["Admin-1"]]$NAME_1`. In other words, the areas's name and area's order in `mwi_ref_tab$strata.adm.name` should **exactly match** with `country_shp_analysis[["Admin-1"]]$NAME_1`.
+- `strata.adm.num`: the corresponding order after you obtain `mwi_ref_tab$strata.adm.name`.
+- `strata.adm.char`: it is `paste0("strata_adm_", mwi_ref_tab$strata.adm.num)`.
+- `urb_frac`: it is derived from the urban-rural population table in the DHS survey, typically located in Appendix A of the survey reports. For greater accuracy, use the actual population numbers to calculate the fraction instead of the urban percentage provided in the table. **We highly recommend using your favorite LLM model to work this out.** For example, take a screenshot of the following figure and use the prompt 'Based on this table, can you extract all the regions inside, with their corresponding population of urban,rural, total? Give me the r code for creating the data frame using data.frame function.'
   ![image](https://github.com/user-attachments/assets/154dc67d-3a95-49b7-adb0-5a2e47ea65c1)
-
-- If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
-
-- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.** (Take the spelling and order in `country_shp_analysis.rds` as the standard)
-- The year on which this fraction is based will serve as our calibration year, as it will be used to adjust the fractions calculated in subsequent steps.
+    - If the DHS survey does not provide this information, refer to the corresponding census survey or estimate it based on urban and rural household numbers (you can calculate the u/r population based on the number of average u/r population per household in the census survey)
+    - The year on which this fraction is based will serve as our calibration year, as it will be used to adjust the fractions calculated in subsequent steps.
 
 
 
-For `mwi_frame_ea.rds` and `mwi_sample_ea.rds`, write codes to create the data frame in the following format:
+For `mwi_frame_ea` and `mwi_sample_ea`, write codes to create the data frame in the following format:
 
 ![image](https://github.com/user-attachments/assets/9e934b66-5ad6-454b-804b-6a636f7e4423)
 
+`mwi_frame_ea` and `mwi_sample_ea` both have 3 columns:
 
-- **Ensure region names's spelling and order match exactly with those in `country_shp_analysis.rds`.** (Take the spelling and order in `country_shp_analysis.rds` as the standard)
-- You can find the number of EA cluster for census or DHS sampling survey in the Appendix A (eg. Nigeria 2018 survey report Table A.2 and Table A.3 in Appendix A)
-  
+- `strata`: Obtained from `country_shp_analysis[["Admin-1"]]$NAME_1`. In other words, the areas's name and area's order in `strata` should **exactly match** with `country_shp_analysis[["Admin-1"]]$NAME_1`.
+- `urban`, `rural`, `total`: You can find the number of EA cluster for census or DHS sampling survey in the Appendix A (eg. Nigeria 2018 survey report Table A.2 and Table A.3 in Appendix A)
 
-Ensure they are stored under the country_survey folder under `Data`, for example:
+
+Make sure that `mwi_ref_tab.rds`, `mwi_frame_ea.rds`, and `mwi_sample_ea.rds` are saved in the country_survey folder within `Data`. For example:
+
 ```
 Data/Malawi_2015/
 ```
