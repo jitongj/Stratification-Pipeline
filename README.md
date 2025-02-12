@@ -95,6 +95,8 @@ This step generates required datasets and polygon information.
 ---
 
 ### **6. Create Reference DataFrames**
+
+#### **6.1
 Now in this step you need to **open a new empty script with cleaned environment** and load the data `country_shp_analysis.rds` under `Data/Malawi_2015/shapeFiles_gadm/`.
 
 The `country_shp_analysis.rds` file contains a list of administrative levels, each of which includes detailed information on the areas within that level. For Malawi, since it has 2 admin levels beyond National level, you will see the following:
@@ -116,8 +118,8 @@ Next, generate the following three data frames and save them as `.rds` files, us
 
 (change `mwi` for your country's abbrev)
 
-Each of these files should be structured as follows:
 
+#### **6.2
 `mwi_ref_tab` has four colums:
 
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
@@ -131,7 +133,7 @@ Each of these files should be structured as follows:
     - The year on which this fraction is based will serve as our calibration year, as it will be used to adjust the fractions calculated in subsequent steps.
 
 
-
+#### **6.3
 For `mwi_frame_ea` and `mwi_sample_ea`, write codes to create the data frame in the following format:
 
 ![image](https://github.com/user-attachments/assets/9e934b66-5ad6-454b-804b-6a636f7e4423)
