@@ -253,7 +253,7 @@ This will generate a plot comparing the stratified and unstratified models again
 ---
 
 ### **12. Stratification at Admin Levels**
-Modify the following variables in `strat_step4_stratifcation_admin2:3.R` according to your chosen survey and then run the script:
+Modify the following variables in `strat_step4_stratifcation_admin2_3.R` according to your chosen survey and then run the script:
 
 ```r
 country <- 'Malawi'
