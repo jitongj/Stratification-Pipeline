@@ -14,9 +14,7 @@ strat_level_GADM <- 1
 
 # indicator
 indicator <- "CH_DIAT_C_ORT"
-indicator <-"HA_HIVP_B_HIV"
 sub_pop <- "k0_5" # the corresponding population group to the indicator
-sub_pop <- "f15_49"
 # Load libraries and info ----------------------------------------------------------
 library(sf)
 library(terra)
