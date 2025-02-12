@@ -335,7 +335,7 @@ ggsave(paste0(country.abbrev,"_",survey_year,"_","visualized_comparison_",indica
 
 # if(unstrat_weighted_bias > strat_weighted_bias) {
 #   setwd(paste(code.dir))
-#   rstudioapi::navigateToFile("strat_step4_stratifcation_admin2:3.R")
+#   rstudioapi::navigateToFile("strat_step4_stratifcation_admin2_3.R")
 # }
 
 setwd(paste(code.dir))
