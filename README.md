@@ -4,6 +4,21 @@ In this document, we give an overview of the urban-rural stratification pipeline
 
 This repository contains scripts for conducting urban-rural stratification using DHS survey data. The pipeline is designed to process subpopulation data, generate urban-rural fractions, and evaluate stratification needs. Please download the the pipline folder from [UR-Pipeline-Demo](https://uwnetid-my.sharepoint.com/:f:/g/personal/jitongj_uw_edu/EplTkYWv0eFCjjwmH7PW-qwBiWzINyB8VIr6VYBMcHPdQQ?e=7wLIAi) and the **codes** folder in this repository.
 
+Note for Mac user: After the file is fully downloaded, you may encounter an error saying: `Unable to expand "UR-Pipeline-Demo.zip" into
+"Desktop". (Error 79 - Inappropriate file type or format.)` This is due to the unzip limit in Mac systerm for lage file. To solve this. There are two ways:
+
+**1. Fist solution:
+Instead of downloading the entire folder at once,  download only the .tif files you need for your specific survey years (the ones you set up later in the steps section) and then download the remaining folders separately. Then reconstruct the folder structure.
+
+**2. Second solution:
+  - Go to the terminal, then cd to the zip file location (To be safe, do not put it in the download path).
+  - Enter the code: `zip -FF "UR-Pipeline-Demo.zip" --out fixed.zip`
+  - Enter the code: `unzip fixed.zip -d UR-Pipeline-Demo-Extracted`
+  - Rename the `UR-Pipeline-Demo-Extracted` to `UR-Pipeline-Demo`
+
+
+
+
 The detailed methodology of the stratification modelcan be found in the referenced document here: [Yunhan Wu and Jon Wakefield](https://academic.oup.com/jrsssa/article/187/3/811/7578683), and the **Stratification_Pipeline.pdf** in this repository.
 
 We also recommend you to try on our Shiny App: [SAE4Health](https://sae4health.stat.uw.edu)
