@@ -14,7 +14,7 @@ This repository contains scripts for conducting urban-rural stratification using
      - Enter the code: `zip -FF "UR-Pipeline-Demo.zip" --out fixed.zip`
      - Enter the code: `unzip fixed.zip -d UR-Pipeline-Demo-Extracted`
      - Rename the `UR-Pipeline-Demo-Extracted` to `UR-Pipeline-Demo`
-     - 
+    
 (**Windows user can also try the first solution if you want to save time from downloading UR-Pipeline-Demo***)
 
 
