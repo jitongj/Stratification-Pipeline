@@ -18,9 +18,6 @@ This repository contains scripts for conducting urban-rural stratification using
     
     - Rename the `UR-Pipeline-Demo-Extracted` to `UR-Pipeline-Demo`
 
-
-
-
 The detailed methodology of the stratification modelcan be found in the referenced document here: [Yunhan Wu and Jon Wakefield](https://academic.oup.com/jrsssa/article/187/3/811/7578683), and the **Stratification_Pipeline.pdf** in this repository.
 
 We also recommend you to try on our Shiny App: [SAE4Health](https://sae4health.stat.uw.edu)
