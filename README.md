@@ -4,7 +4,7 @@ In this document, we give an overview of the urban-rural stratification pipeline
 
 This repository contains scripts for conducting urban-rural stratification using DHS survey data. The pipeline is designed to process subpopulation data, generate urban-rural fractions, and evaluate stratification needs. Please download the the pipline folder from [UR-Pipeline-Demo](https://uwnetid-my.sharepoint.com/:f:/g/personal/jitongj_uw_edu/EplTkYWv0eFCjjwmH7PW-qwBiWzINyB8VIr6VYBMcHPdQQ?e=7wLIAi) and the **codes** folder in this repository.
 
-**Note for Mac user**: After the **UR-Pipeline-Demo** is fully downloaded, you may encounter an error saying: `Unable to expand "UR-Pipeline-Demo.zip". (Error 79 - Inappropriate file type or format.)` This is due to the unzip limit in Mac systerm for lage file. To solve this. There are two ways:
+**Note for Mac user**: After the **UR-Pipeline-Demo** is fully downloaded, you may encounter an error saying: `Unable to expand "UR-Pipeline-Demo.zip". (Error 79 - Inappropriate file type or format.)` This is due to the unzip limit in Mac system for lage file. To solve this. There are two ways:
 
   1. Fist solution:
   Instead of downloading the entire folder at once,  download only the .tif files you need for your specific survey years (the ones you set up        later in the steps section) and then download the remaining folders separately. Then reconstruct the folder structure.
