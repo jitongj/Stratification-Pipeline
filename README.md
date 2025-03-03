@@ -11,8 +11,11 @@ This repository contains scripts for conducting urban-rural stratification using
 
   2. Second solution:
     - Go to the terminal, then cd to the zip file location (To be safe, do not put it in the download path).
+     
     - Enter the code: `zip -FF "UR-Pipeline-Demo.zip" --out fixed.zip`
+    
     - Enter the code: `unzip fixed.zip -d UR-Pipeline-Demo-Extracted`
+    
     - Rename the `UR-Pipeline-Demo-Extracted` to `UR-Pipeline-Demo`
 
 
