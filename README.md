@@ -93,7 +93,7 @@ strat_level_GADM <- 1 # NO NEED TO CHANGE
 svy_training_year <- c(2010,2015)
 ```
 Here `frame_year` is the census year which the DHS survey this based on,  `calibrated_year` is the year which DHS survey's u/r population fraction is based on (See section 6 for more details). `strat_level_GADM` is the admin level which the sampling fram is based on, typical equal to `1`. `svy_training_year` is referring to the DHS surveys who were conducted based on the same census survey. 
-For example, Malawi 2015 survey and 2010 survey are all based on Malawi 2008 census survey, so We combine them together to increase the training sample size for classification modeling.
+For example, Malawi 2015 survey and 2010 survey are all based on Malawi 2008 census survey, so we combine them together to increase the training sample size for classification modeling.
 
 ---
 
@@ -134,7 +134,7 @@ Next, generate the following three data frames and save them as `.rds` files, us
 
 
 #### **6.2 Create `mwi_ref_tab`**
-`mwi_ref_tab` has four colums:
+`mwi_ref_tab` has four columns:
 
 ![image](https://github.com/user-attachments/assets/dfb0b11f-5ad7-4a4e-b516-983ba3de2ba3)
 
