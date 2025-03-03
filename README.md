@@ -6,14 +6,14 @@ This repository contains scripts for conducting urban-rural stratification using
 
 **Note for Mac user**: After the **UR-Pipeline-Demo** is fully downloaded, you may encounter an error saying: `Unable to expand "UR-Pipeline-Demo.zip". (Error 79 - Inappropriate file type or format.)` This is due to the unzip limit in Mac systerm for lage file. To solve this. There are two ways:
 
-**1. Fist solution:
-Instead of downloading the entire folder at once,  download only the .tif files you need for your specific survey years (the ones you set up later in the steps section) and then download the remaining folders separately. Then reconstruct the folder structure.
+  1. Fist solution:
+  Instead of downloading the entire folder at once,  download only the .tif files you need for your specific survey years (the ones you set up        later in the steps section) and then download the remaining folders separately. Then reconstruct the folder structure.
 
-**2. Second solution:
-  - Go to the terminal, then cd to the zip file location (To be safe, do not put it in the download path).
-  - Enter the code: `zip -FF "UR-Pipeline-Demo.zip" --out fixed.zip`
-  - Enter the code: `unzip fixed.zip -d UR-Pipeline-Demo-Extracted`
-  - Rename the `UR-Pipeline-Demo-Extracted` to `UR-Pipeline-Demo`
+  2. Second solution:
+    - Go to the terminal, then cd to the zip file location (To be safe, do not put it in the download path).
+    - Enter the code: `zip -FF "UR-Pipeline-Demo.zip" --out fixed.zip`
+    - Enter the code: `unzip fixed.zip -d UR-Pipeline-Demo-Extracted`
+    - Rename the `UR-Pipeline-Demo-Extracted` to `UR-Pipeline-Demo`
 
 
 
