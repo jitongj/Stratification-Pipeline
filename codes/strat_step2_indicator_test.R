@@ -95,8 +95,8 @@ cat("Formula for model2:",indictor_test$formula_model2, "\n")
 cat("Formula for model3:",indictor_test$formula_model3, "\n")
 
 # Print OR and 95% CI for UR
-cat("UR's OR in model2：", round(indictor_test$or, 3),"\n")
-cat("95% CI：(", round(indictor_test$or_ci_lower, 3), ",", round(indictor_test$or_ci_upper, 3), ")\n")
+cat("UR's OR in model2: ", round(indictor_test$or, 3),"\n")
+cat("95% CI: (", round(indictor_test$or_ci_lower, 3), ",", round(indictor_test$or_ci_upper, 3), ")\n")
 
 
 # Output p-values from ANOVA results
