@@ -469,17 +469,19 @@ lr_test <- function(tmp.analysis.dat) {
     tmp.analysis.dat <- tmp.analysis.dat[rowSums(is.na(tmp.analysis.dat)) == 0, ]
   }
   
+  # Use v024 + original strata to define survey strata
+  tmp.analysis.dat$admin <- tmp.analysis.dat$v024
+  tmp.analysis.dat$survey_strata <- interaction(tmp.analysis.dat$v024, tmp.analysis.dat$strata, drop = TRUE)
+  
   tmp.analysis.dat <- dplyr::mutate(tmp.analysis.dat, strata = dplyr::case_when(
     strata == "urban" ~ 1,
     strata == "rural" ~ 0,
-    TRUE ~ NA_real_  # Sets to NA for any other case
+    TRUE ~ NA_real_
   ))
   
   # Rename strata to UR and process admin column
   names(tmp.analysis.dat)[names(tmp.analysis.dat) == "strata"] <- "UR"
   tmp.analysis.dat$value <- as.integer(tmp.analysis.dat$value)
-  tmp.analysis.dat$admin <- gsub(" - urban| - rural", "", tmp.analysis.dat$v022)
-  tmp.analysis.dat$admin <- gsub(" urban| rural", "", tmp.analysis.dat$admin)
   
   tmp.analysis.dat$admin_UR <- paste(tmp.analysis.dat$admin, tmp.analysis.dat$UR, sep = "_")
   admin_UR_counts <- table(tmp.analysis.dat$admin_UR)
@@ -487,7 +489,7 @@ lr_test <- function(tmp.analysis.dat) {
   tmp.analysis.dat <- tmp.analysis.dat[tmp.analysis.dat$admin_UR %in% valid_admin_UR, ]
   
   
-  tmp.dhs.design <- survey::svydesign(id = ~cluster, weights = ~weight, strata = ~v022,
+  tmp.dhs.design <- survey::svydesign(id = ~cluster, weights = ~weight, strata = ~survey_strata,
                                       nest = TRUE, survey.lonely.psu = "average", data = tmp.analysis.dat)
   
   # Fit models
